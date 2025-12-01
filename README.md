@@ -1,185 +1,639 @@
-# aws-devops-zero-to-hero
+# ☁️ AWS DevOps Zero to Hero
+
+A comprehensive hands-on learning path for mastering AWS DevOps from fundamentals to advanced concepts. This streamlined repository contains practical projects, real-world examples, and production-ready implementations focused on high-value AWS services.
+
+[![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
+[![DevOps](https://img.shields.io/badge/DevOps-0A66C2?style=for-the-badge&logo=devops&logoColor=white)](https://aws.amazon.com/devops/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
+
+📺 **Complete YouTube Playlist:** [AWS DevOps Zero to Hero](https://www.youtube.com/playlist?list=PLdpzxOOAlwvLNOxX0RfndiYSt1Le9azze)
+
+---
+
+## 📚 Table of Contents
+
+- [🎯 Learning Path](#-learning-path)
+- [📁 Repository Structure](#-repository-structure)
+- [🛠️ Prerequisites](#️-prerequisites)
+- [🚦 Getting Started](#-getting-started)
+- [📖 Course Modules](#-course-modules)
+- [🎓 Learning Outcomes](#-learning-outcomes)
+- [📊 Progress Tracker](#-progress-tracker)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+
+---
+
+## 🎯 Learning Path
 
-Complete YouTube playlist - https://www.youtube.com/playlist?list=PLdpzxOOAlwvLNOxX0RfndiYSt1Le9azze
+This course takes you from AWS fundamentals to advanced DevOps practices with hands-on projects every step of the way.
 
-AWS zero to hero repo for devops engineers to learn AWS in 30 Days. This repo includes projects, presentations, interview questions and real time examples. Each day's class will provide real-time knowledge on AWS services, allowing you to apply what you've learned and gain practical skills in working with AWS in a DevOps context.
+```mermaid
+graph LR
+    A[☁️ AWS Basics] --> B[🔐 IAM & Security]
+    B --> C[💻 Compute & Network]
+    C --> D[📦 Storage]
+    D --> E[🏗️ Infrastructure as Code]
+    E --> F[🔄 CI/CD Pipeline]
+    F --> G[📊 Monitoring]
+    G --> H[⚡ Serverless]
+    H --> I[🐳 Containers]
+    I --> J[☸️ Kubernetes]
+    J --> K[🎯 Production Ready]
+```
 
-## Day 1: Introduction to AWS
+---
+
+## 📁 Repository Structure
+
+```
+aws-devops-zero2pro/
+├── 01-aws-fundamentals/          # ☁️ AWS basics and CLI essentials
+├── 02-iam-security/              # 🔐 Identity and access management
+├── 03-ec2-compute/               # 💻 Virtual servers and compute
+├── 04-vpc-networking/            # 🌐 VPC and networking
+├── 05-route53-dns/               # 🌍 DNS and domain management
+├── 06-s3-storage/                # 📦 Object storage and lifecycle
+├── 07-cloudformation-iac/        # 📜 Infrastructure as Code
+├── 08-codepipeline-cicd/         # 🔄 Complete CI/CD pipelines
+├── 09-codebuild/                 # 🔨 Build automation
+├── 10-cloudwatch-monitoring/     # 📊 Monitoring and logging
+├── 11-lambda-serverless/         # ⚡ Serverless computing
+├── 12-ecr-registry/              # 🐳 Container image registry
+├── 13-ecs-containers/            # 📦 Container orchestration
+├── 14-eks-kubernetes/            # ☸️ Kubernetes on AWS
+├── 15-terraform-iac/             # 🏗️ Terraform IaC
+├── interview-questions/          # 💼 Interview preparation
+└── scripts/                      # 🔧 Utility scripts
+```
+
+---
 
-You will learn what is private and public cloud. Why companies are moving to public cloud, what are the advantages of moving to cloud.
+## 🛠️ Prerequisites
+
+Before starting this course, ensure you have:
+
+- ☁️ **AWS Account** - Free tier eligible ([Sign up here](https://aws.amazon.com/free/))
+- 💻 **Basic Linux/Unix knowledge** - Command line familiarity
+- 🐧 **Terminal skills** - Comfortable with CLI operations
+- 🌐 **Basic networking** - Understanding of IP, DNS, ports
+- 🐍 **Python basics** - Helpful but not required
+- 📝 **Code editor** - VS Code recommended with AWS extensions
+
+---
+
+## 🚦 Getting Started
+
+### AWS Account Setup
 
-Also, you will be introduced to the basics of AWS, including the core services and their significance in DevOps practices. Finally learn how to set up an AWS account and navigate the AWS Management Console.
+```bash
+# 1. Create AWS Account
+Visit: https://aws.amazon.com/free/
 
-## Day 2: IAM (Identity and Access Management)
+# 2. Install AWS CLI
+pip install awscli
+
+# Or using package manager
+# macOS: brew install awscli
+# Ubuntu: sudo apt install awscli
+
+# 3. Configure AWS CLI
+aws configure
+# Enter: Access Key ID, Secret Access Key, Region (us-east-1), Output format (json)
 
-You will explore IAM, which is used for managing access to AWS resources. You'll learn how to create IAM users, groups, and roles, and how to apply permissions and security best practices to ensure proper access control.
+# 4. Verify setup
+aws sts get-caller-identity
+aws ec2 describe-regions --output table
+```
 
-## Day 3: EC2 Instances
+### Repository Setup
 
-You'll dive into EC2, which provides virtual servers in the cloud. You'll learn how to launch EC2 instances, connect to them using SSH, and understand key concepts such as instance types, security groups, and key pairs.
+```bash
+# Clone repository
+git clone https://github.com/yourusername/aws-devops-zero2pro.git
+cd aws-devops-zero2pro
 
-**Your First AWS Project**: Deploy a simple web application(such as jenkins) on the ec2 instance and access the application from outside AWS.
+# Start with module 01
+cd 01-aws-fundamentals
+cat README.md
+```
 
-## Day 4: AWS Networking (VPC)
+---
 
-You'll explore AWS networking concepts, with a specific focus on VPC (Virtual Private Cloud). You'll learn how to create and configure VPCs, subnets, and route tables, enabling you to design and manage the network infrastructure for your applications.
+## 📖 Course Modules
 
-## Day 5: AWS Security
+### 🎓 Foundation Level (Modules 1-6)
 
-This day emphasizes security best practices in AWS. You'll learn how to implement security measures such as security groups, network ACLs (Access Control Lists), and IAM policies to ensure the confidentiality, integrity, and availability of your AWS resources.
+#### 01. ☁️ AWS Fundamentals
+**[`01-aws-fundamentals/`](01-aws-fundamentals/)**
 
-## Day 6: AWS Route 53
+Learn cloud computing fundamentals and AWS basics.
 
-**Project:** Configure and manage a domain name using Route 53. You'll register a domain, set up DNS records, and explore advanced features such as health checks, routing policies, and DNS-based failover.
+**Topics Covered:**
+- 📌 Public vs Private cloud concepts
+- 🏢 Why companies move to cloud
+- 🌐 AWS core services overview
+- 🖥️ AWS Management Console navigation
+- 💰 Free tier and billing basics
+- ⌨️ AWS CLI essentials
 
-## Day 7: Secure VPC Setup with EC2 Instances
+**Hands-on Files:**
+- [`README.md`](01-aws-fundamentals/README.md) - Complete introduction guide
+- [`aws-cli-examples.sh`](01-aws-fundamentals/aws-cli-examples.sh) - 150+ essential CLI commands
 
-**Project:**
+**Key Commands:**
+```bash
+# List all services
+aws help
 
-- Design and configure a VPC:
-    Create a VPC with custom IP ranges.
-    Set up public and private subnets.
-    Configure route tables and associate subnets.
+# Check your identity
+aws sts get-caller-identity
 
-- Implement network security:
-    Set up network access control lists (ACLs) to control inbound and outbound traffic.
-    Configure security groups for EC2 instances to allow specific ports and protocols.
+# List EC2 instances
+aws ec2 describe-instances
+```
 
-- Provision EC2 instances:
-    Launch EC2 instances in both the public and private subnets.
-    Configure security groups for the instances to allow necessary traffic.
-    Create and assign IAM roles to the instances with appropriate permissions.
+---
 
-- Networking and routing:
-    Set up an internet gateway to allow internet access for instances in the public subnet.
-    Configure NAT gateway or NAT instance to enable outbound internet access for instances in the private subnet.
-    Create appropriate route tables and associate them with the subnets.
+#### 02. 🔐 IAM Security
+**[`02-iam-security/`](02-iam-security/)**
 
-- SSH key pair and access control:
-    Generate an SSH key pair and securely store the private key.
-    Configure the instances to allow SSH access only with the generated key pair.
-    Implement IAM policies and roles to control access and permissions to AWS resources.
+Master AWS access control and security.
 
-- Test and validate the setup:
-    SSH into the EC2 instances using the private key and verify connectivity.
-    Test network connectivity between instances in different subnets.
-    Validate security group rules and network ACL settings.
+**Topics Covered:**
+- 👤 IAM users, groups, and roles
+- 📋 Policies and permissions (JSON)
+- 🔐 MFA (Multi-Factor Authentication)
+- 🎯 Principle of least privilege
+- 🔄 Service roles and trust policies
+- 🌐 Cross-account access
+
+**Key Concepts:**
+- Policy evaluation logic
+- Inline vs managed policies
+- Resource-based policies
+- Permission boundaries
 
-By implementing this project, you'll gain hands-on experience in setting up a secure VPC with EC2 instances, implementing networking and routing, configuring security groups and IAM roles, and ensuring proper access control. This project will provide a practical understanding of how these AWS services work together to create a secure and scalable infrastructure for your applications.
+**Best Practices:**
+- ✅ Enable MFA for all users
+- ✅ Use roles instead of access keys
+- ✅ Rotate credentials regularly
+- ✅ Follow least privilege principle
 
-## Day 8: AWS Interview Questions on EC2, IAM and VPC
+---
 
-## Day 9: Amazon S3
+#### 03. 💻 EC2 Compute
+**[`03-ec2-compute/`](03-ec2-compute/)**
 
-This day focuses on Amazon S3, a scalable object storage service. You'll learn how to create S3 buckets, upload and download objects, and organize data using S3 features like versioning, lifecycle policies, and access control.
+Deploy and manage virtual servers in the cloud.
+
+**Topics Covered:**
+- 🖥️ EC2 instance types and families
+- 🚀 Launching and connecting to instances
+- 🔒 Security groups and key pairs
+- 💾 EBS volumes and snapshots
+- 📊 Instance metadata and user data
+- 🔄 Auto Scaling basics
 
-## Day 10: AWS CLI
+**🎯 Hands-on Project:** Deploy Jenkins on EC2 and access it from the internet
 
-## Day 11: AWS CloudFormation
+**Instance Types:**
+- **t2/t3** - General purpose (burstable)
+- **m5** - Balanced compute/memory
+- **c5** - Compute optimized
+- **r5** - Memory optimized
+
+---
+
+#### 04. 🌐 VPC Networking
+**[`04-vpc-networking/`](04-vpc-networking/)**
+
+Design and implement cloud network infrastructure.
 
-This day introduces Infrastructure as Code (IaC) using AWS CloudFormation. You'll learn how to create CloudFormation templates to automate the provisioning of resources, manage stacks, and ensure consistent infrastructure across deployments.
+**Topics Covered:**
+- 🏗️ VPC (Virtual Private Cloud) concepts
+- 📡 Subnets (public and private)
+- 🛣️ Route tables and routing
+- 🌐 Internet Gateway and NAT Gateway
+- 🛡️ Network ACLs vs Security Groups
+- 🔗 VPC Peering and Transit Gateway
+
+**Architecture Patterns:**
+- Single VPC with public/private subnets
+- Multi-tier application architecture
+- Hub-and-spoke network design
+
+---
 
-**Project:** You'll work on creating a CloudFormation template that provisions a fully configured application stack, including EC2 instances, networking components, and security groups.
+#### 05. 🌍 Route53 DNS
+**[`05-route53-dns/`](05-route53-dns/)**
+
+Configure domain names and DNS routing.
+
+**Topics Covered:**
+- 🌐 Domain registration
+- 📝 DNS record types (A, CNAME, MX, TXT)
+- 🎯 Routing policies (simple, weighted, latency, failover)
+- ❤️ Health checks and monitoring
+- ⚖️ DNS-based load balancing
 
-## Day 12: AWS CodeCommit
+**🎯 Project:** Register and configure a custom domain with health checks
 
-This day focuses on AWS CodeCommit, a managed source control service. You'll learn how to set up a Git repository in CodeCommit, collaborate with team members, and manage version control of your codebase.
+**Routing Policies:**
+- **Simple** - Single resource
+- **Weighted** - Traffic distribution
+- **Latency** - Lowest latency
+- **Failover** - Active-passive
+- **Geolocation** - Location-based
 
-**Project:** You'll configure a CodeCommit repository for a team project, including setting up access control and collaboration workflows.
+---
+
+#### 06. 📦 S3 Storage
+**[`06-s3-storage/`](06-s3-storage/)**
+
+Master scalable object storage.
+
+**Topics Covered:**
+- 🪣 S3 buckets and objects
+- 💾 Storage classes (Standard, IA, Glacier, Deep Archive)
+- 🔄 Versioning and lifecycle policies
+- 🔒 Bucket policies and ACLs
+- 🌐 Static website hosting
+- 🌍 Cross-region replication
+- 🔐 Encryption (SSE-S3, SSE-KMS, SSE-C)
 
-## Day 13: AWS CodePipeline
+**Storage Classes:**
+| Class | Use Case | Retrieval Time |
+|-------|----------|----------------|
+| Standard | Frequently accessed | Milliseconds |
+| IA | Infrequent access | Milliseconds |
+| Glacier | Archive | Minutes-hours |
+| Deep Archive | Long-term archive | 12 hours |
 
-You'll dive into AWS CodePipeline, a fully managed continuous delivery service. You'll learn how to build end-to-end CI/CD pipelines by configuring source, build, and deployment stages, automating the entire software release process.
+---
+
+### 🔧 Intermediate Level (Modules 7-11)
 
-**Project:** You'll create a CI/CD pipeline using CodePipeline for an application deployment, including source code integration, build, and automatic deployment to a target environment.
+#### 07. 📜 CloudFormation IaC
+**[`07-cloudformation-iac/`](07-cloudformation-iac/)**
 
-## Day 14: AWS CodeBuild
+Automate infrastructure provisioning with CloudFormation.
 
-This day focuses on AWS CodeBuild, a fully managed build service. You'll learn how to configure build projects in CodeBuild, define build specifications, and perform build and testing processes.
+**Topics Covered:**
+- 📄 CloudFormation templates (YAML/JSON)
+- 📚 Stacks and stack sets
+- 🔧 Parameters and outputs
+- 🧮 Intrinsic functions (Ref, GetAtt, Sub)
+- 🔄 Change sets and drift detection
+- 🗺️ Nested stacks and cross-stack references
+
+**Hands-on Files:**
+- [`vpc-template.yaml`](07-cloudformation-iac/vpc-template.yaml) - Complete VPC infrastructure (138 lines)
+- [`ec2-instance.yaml`](07-cloudformation-iac/ec2-instance.yaml) - EC2 with Apache web server (66 lines)
+- [`deploy-commands.sh`](07-cloudformation-iac/deploy-commands.sh) - Deployment automation (54 lines)
+
+**🎯 Project:** Create CloudFormation template for complete application stack
 
-**Project:** You'll configure and run CodeBuild for a project, including defining build specifications and integrating with other AWS services.
+**Template Structure:**
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Your description'
+Parameters: # Input values
+Resources: # AWS resources
+Outputs: # Return values
+```
 
-## Day 15: AWS CodeDeploy
+---
 
-You'll explore AWS CodeDeploy, a service for automating application deployments to various compute environments. You'll learn how to create deployment groups, configure deployment strategies, and perform automatic rollbacks if necessary.
+#### 08. 🔄 CodePipeline CI/CD
+**[`08-codepipeline-cicd/`](08-codepipeline-cicd/)**
 
-**Project:** You'll implement a Blue/Green deployment strategy for a sample application using CodeDeploy, ensuring zero-downtime deployments and easy rollback options.
+Build automated deployment pipelines.
 
-## Day 16: AWS CloudWatch
+**Topics Covered:**
+- 🔄 Pipeline stages (Source, Build, Test, Deploy)
+- 🔗 Integration with CodeCommit, CodeBuild, CodeDeploy
+- ✋ Manual approval actions
+- 🎣 Pipeline triggers and webhooks
+- 🌍 Cross-region deployments
+- 🔙 Rollback strategies
 
-This day focuses on monitoring AWS resources using AWS CloudWatch. You'll learn how to create alarms, set up notifications, and collect metrics to gain insights into the health and performance of your applications and infrastructure.
+**Hands-on Files:**
+- [`buildspec.yml`](08-codepipeline-cicd/buildspec.yml) - CodeBuild specification (43 lines)
+- [`pipeline-template.yaml`](08-codepipeline-cicd/pipeline-template.yaml) - Complete CI/CD pipeline (172 lines)
 
-**Project:** You'll set up CloudWatch alarms for critical metrics of an application, define appropriate threshold conditions, and configure notification actions.
+**🎯 Project:** Complete CI/CD pipeline from GitHub to S3 deployment
 
-## Day 17: AWS Lambda
+**Pipeline Stages:**
+1. **Source** - GitHub/CodeCommit
+2. **Build** - CodeBuild
+3. **Test** - Automated testing
+4. **Deploy** - CodeDeploy/S3/ECS
 
-This day introduces serverless computing with AWS Lambda. You'll learn how to create and deploy serverless functions, trigger them based on events, and leverage Lambda to build scalable and event-driven architectures.
+---
 
-## Day 18: AWS CloudWatch Events and EventBridge
+#### 09. 🔨 CodeBuild
+**[`09-codebuild/`](09-codebuild/)**
 
-This day focuses on AWS CloudWatch Events and EventBridge, services for event-driven architectures. You'll learn how to create event rules, configure event targets, and build serverless event-driven workflows.
+Automate build and test processes.
 
-**Project:** You'll build a serverless event-driven workflow using CloudWatch Events and EventBridge, demonstrating the integration and automation of different AWS services based on events.
+**Topics Covered:**
+- 🏗️ Build projects and specifications
+- 📝 buildspec.yml configuration
+- 🐳 Build environments and Docker images
+- 📦 Artifacts and caching
+- 🔗 Integration with other AWS services
+- 🧪 Running tests in build phase
 
-## Day 19: AWS CloudFront
+**buildspec.yml Phases:**
+- **install** - Install dependencies
+- **pre_build** - Pre-build commands
+- **build** - Build commands
+- **post_build** - Post-build commands
 
- If you've never heard of CDN or CloudFront before, don't worry, we will start from scratch and gradually build up your understanding. By the end, you'll be well-versed in these technologies.
+---
 
-**Project:** You'll configure a s3 bucket to host a static website and learn how to serve the requests to this website through CDN that is AWS Cloud Front.
+#### 10. 📊 CloudWatch Monitoring
+**[`10-cloudwatch-monitoring/`](10-cloudwatch-monitoring/)**
 
-## Day 20: AWS ECR (Elastic Container Registry)
+Monitor and observe AWS resources.
 
-You'll explore AWS ECR, a fully managed container registry for storing and managing container images. You'll learn how to push and pull Docker images to and from ECR, enabling seamless integration with ECS and other container services.
+**Topics Covered:**
+- 📈 CloudWatch metrics and dimensions
+- 🎯 Custom metrics
+- 🚨 Alarms and notifications (SNS)
+- 📝 CloudWatch Logs and Log Insights
+- 📊 Dashboards and visualizations
+- 🔍 Log aggregation and analysis
 
-**Project:** You'll build a CI/CD pipeline that automatically builds, pushes, and deploys Docker images to ECR, ensuring streamlined container image management.
+**🎯 Project:** Set up comprehensive monitoring with alarms and dashboards
 
-## Day 21: AWS ECS (Elastic Container Service)
+**Metric Types:**
+- **Standard** - AWS service metrics
+- **Custom** - Application metrics
+- **High-resolution** - Sub-minute data
 
-This day focuses on AWS ECS, a fully managed container orchestration service. You'll learn how to run and manage containers using ECS, including creating task definitions, managing services, and scaling with auto-scaling capabilities.
+---
 
-**Project:** You'll deploy a multi-container application using ECS, configure auto-scaling policies, and ensure high availability and efficient resource utilization.
+#### 11. ⚡ Lambda Serverless
+**[`11-lambda-serverless/`](11-lambda-serverless/)**
 
-## Day 22: AWS EKS (Elastic Kubernetes Service)
+Build serverless applications.
 
-This day introduces AWS EKS, a fully managed Kubernetes service. You'll learn how to deploy and manage Kubernetes clusters using EKS, including launching worker nodes, configuring networking, and deploying applications using Kubernetes manifests.
+**Topics Covered:**
+- ⚡ Lambda functions and runtimes
+- 🎯 Event sources and triggers
+- 📦 Lambda layers and dependencies
+- 🔧 Environment variables and configuration
+- 🚀 Performance optimization and cold starts
+- 💰 Cost optimization strategies
 
-**Project:** You'll deploy a sample application on EKS using Kubernetes manifests, demonstrating the capabilities of running containerized applications on a managed Kubernetes service.
+**Supported Runtimes:**
+- Python, Node.js, Java, Go, .NET, Ruby
+- Custom runtimes with Lambda layers
 
-## Day 23: AWS Systems Manager
+**Event Sources:**
+- API Gateway, S3, DynamoDB, SNS, SQS, EventBridge
 
-This day focuses on AWS Secrets Manager, a service for storing and managing secrets such as database credentials, API keys, and other sensitive information. You'll learn how to store, retrieve, and rotate secrets securely in your applications.
+---
 
-**Project:** You'll configure Secrets Manager to store and manage secrets, integrate secret retrieval in an application, and implement secret rotation policies.
+### 🚀 Advanced Level (Modules 12-15)
 
-## Day 24: Create Infrastructure using Terraform
+#### 12. 🐳 ECR Registry
+**[`12-ecr-registry/`](12-ecr-registry/)**
 
-This day focusses on creating infrastructure using Terraform with real time example.
+Manage Docker container images.
 
-**Project:** You'll create a VPC and deploy 2 applications in different availability zones. We will also create a load balancer to balance the load between the instances automatically.
+**Topics Covered:**
+- 📦 ECR repositories and lifecycle policies
+- 🔍 Image scanning for vulnerabilities
+- 🌍 Cross-region replication
+- 🔐 IAM policies for ECR
+- 🔄 Integration with CI/CD pipelines
+- 🏷️ Image tagging strategies
 
-## Day 25: AWS CloudTrail and Config
+**🎯 Project:** CI/CD pipeline with automated Docker image builds and scanning
 
-You'll explore AWS CloudTrail and AWS Config, which provide auditing and compliance capabilities. You'll learn how to track API calls using CloudTrail and ensure compliance with AWS Config rules.
+**Lifecycle Policies:**
+- Expire old images
+- Keep only tagged images
+- Limit image count
 
-**Project:** You'll configure CloudTrail to log API activities and set up AWS Config rules to enforce compliance policies for your AWS resources.
+---
 
-## Day 26: AWS Elastic Load Balancer
+#### 13. 📦 ECS Containers
+**[`13-ecs-containers/`](13-ecs-containers/)**
 
-You'll explore AWS Elastic Load Balancer, a service for distributing incoming application traffic across multiple targets. You'll learn how to configure and manage load balancers to ensure high availability, fault tolerance, and scalability.
+Orchestrate containers at scale.
 
-**Project:** You'll configure an Elastic Load Balancer for an application, define target groups, and observe the load balancing behavior across instances.
+**Topics Covered:**
+- 🏗️ ECS clusters and services
+- 📋 Task definitions and containers
+- 🚀 Fargate vs EC2 launch types
+- 📈 Service auto-scaling
+- ⚖️ Load balancer integration (ALB)
+- 🔄 Blue/Green deployments
 
-## Day 27: 500 AWS interview questions and answers topic wise for interviews.
+**🎯 Project:** Deploy multi-container application with auto-scaling
 
-This day focuses on learning how to migrate applications to AWS cloud. What are the most popular strategies and tools used to achieve the cloud migration.
+**Launch Types:**
+| Feature | Fargate | EC2 |
+|---------|---------|-----|
+| Management | Serverless | Self-managed |
+| Pricing | Per task | Per instance |
+| Control | Less | More |
+| Use Case | Simplicity | Customization |
 
-## Day 28: AWS Cloud Migration Strategies and Tools
+---
 
-This day focuses on learning how to migrate applications to AWS cloud. What are the most popular strategies and tools used to achieve the cloud migration.
+#### 14. ☸️ EKS Kubernetes
+**[`14-eks-kubernetes/`](14-eks-kubernetes/)**
 
-## Day 29: AWS Best Practices and Job Preparation
+Run Kubernetes on AWS.
 
-On the final day, you'll review best practices for AWS services, including security, cost optimization and performance.
+**Topics Covered:**
+- ☸️ EKS cluster creation and management
+- 🖥️ Worker nodes and node groups
+- 🔧 kubectl and eksctl tools
+- 📦 Kubernetes deployments and services
+- 🌐 Ingress controllers and load balancers
+- 📊 Monitoring with CloudWatch Container Insights
 
-## Day 30: AWS Project with RDS
+**🎯 Project:** Deploy microservices application on EKS
 
+**Key Components:**
+- **Control Plane** - Managed by AWS
+- **Data Plane** - Worker nodes (EC2/Fargate)
+- **Add-ons** - CoreDNS, kube-proxy, VPC CNI
+
+---
+
+#### 15. 🏗️ Terraform IaC
+**[`15-terraform-iac/`](15-terraform-iac/)**
+
+Use Terraform for AWS infrastructure.
+
+**Topics Covered:**
+- 🔧 Terraform basics and AWS provider
+- 📦 Resources and data sources
+- 🔢 Variables and outputs
+- 💾 State management (local, S3)
+- 📚 Modules and workspaces
+- 🔄 Terraform vs CloudFormation
+
+**🎯 Project:** Create VPC and deploy applications across AZs with load balancer
+
+**Terraform Workflow:**
+```bash
+terraform init    # Initialize
+terraform plan    # Preview changes
+terraform apply   # Apply changes
+terraform destroy # Cleanup
+```
+
+---
+
+## 🎓 Learning Outcomes
+
+By completing this course, you will be able to:
+
+✅ **Master** AWS core services and architecture  
+✅ **Build** production-ready cloud applications  
+✅ **Implement** complete CI/CD pipelines  
+✅ **Deploy** containerized applications with ECS and EKS  
+✅ **Design** secure and scalable infrastructure  
+✅ **Automate** infrastructure with IaC (CloudFormation, Terraform)  
+✅ **Monitor** applications with CloudWatch  
+✅ **Develop** serverless applications with Lambda  
+✅ **Prepare** for AWS DevOps job interviews  
+✅ **Follow** AWS Well-Architected Framework principles  
+
+---
+
+## 📊 Progress Tracker
+
+Track your learning journey:
+
+### 🎓 Foundation Level
+- [ ] 01. AWS Fundamentals
+- [ ] 02. IAM Security
+- [ ] 03. EC2 Compute
+- [ ] 04. VPC Networking
+- [ ] 05. Route53 DNS
+- [ ] 06. S3 Storage
+
+### 🔧 Intermediate Level
+- [ ] 07. CloudFormation IaC
+- [ ] 08. CodePipeline CI/CD
+- [ ] 09. CodeBuild
+- [ ] 10. CloudWatch Monitoring
+- [ ] 11. Lambda Serverless
+
+### 🚀 Advanced Level
+- [ ] 12. ECR Registry
+- [ ] 13. ECS Containers
+- [ ] 14. EKS Kubernetes
+- [ ] 15. Terraform IaC
+
+---
+
+## 💡 Best Practices
+
+Throughout this course, you'll learn:
+
+- 🏗️ **Well-Architected Framework** - 5 pillars (Operational Excellence, Security, Reliability, Performance, Cost)
+- 🔒 **Security** - IAM best practices, encryption, least privilege
+- 💰 **Cost Optimization** - Right-sizing, reserved instances, spot instances
+- 📈 **Performance** - Auto-scaling, caching, CDN
+- 🔄 **Reliability** - Multi-AZ, backups, disaster recovery
+- 📝 **Documentation** - Clear, maintainable infrastructure code
+- 🧪 **Testing** - Infrastructure testing and validation
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+### How to Contribute:
+
+1. 🍴 Fork the repository
+2. 🌿 Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. 💾 Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. 📤 Push to the branch (`git push origin feature/AmazingFeature`)
+5. 🔃 Open a Pull Request
+
+---
+
+## 📞 Support
+
+If you have any questions or need help:
+
+- 📧 Open an issue in this repository
+- 💬 Join the discussion in Issues
+- 📚 Check [AWS Documentation](https://docs.aws.amazon.com/)
+- 🎥 Watch the [YouTube Playlist](https://www.youtube.com/playlist?list=PLdpzxOOAlwvLNOxX0RfndiYSt1Le9azze)
+- 🌐 Visit [AWS Training](https://aws.amazon.com/training/)
+
+---
+
+## 📚 Additional Resources
+
+- 📖 [AWS Documentation](https://docs.aws.amazon.com/)
+- 🎓 [AWS Training and Certification](https://aws.amazon.com/training/)
+- 📘 [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
+- 🎥 [AWS YouTube Channel](https://www.youtube.com/user/AmazonWebServices)
+- 💬 [AWS re:Post Community](https://repost.aws/)
+- 🐦 [AWS on Twitter](https://twitter.com/awscloud)
+
+---
+
+## 🎯 Next Steps
+
+After completing this course:
+
+1. 📜 **Get AWS Certified:**
+   - AWS Certified Solutions Architect - Associate
+   - AWS Certified Developer - Associate
+   - AWS Certified DevOps Engineer - Professional
+
+2. 🚀 **Build Real Projects:**
+   - Deploy production applications
+   - Contribute to open source AWS projects
+   - Create your DevOps portfolio
+
+3. 💼 **Career Growth:**
+   - Apply for AWS DevOps positions
+   - Join AWS communities and user groups
+   - Continue learning advanced topics (EKS, Step Functions, AppSync)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🌟 Acknowledgments
+
+- 🙏 AWS Community for excellent documentation
+- 👥 Contributors who have helped improve this course
+- 🎓 All learners who provide feedback and suggestions
+- ❤️ Open source community for continuous support
+
+---
+
+<div align="center">
+
+### ⭐ Star this repository if you find it helpful!
+
+**Happy Learning! ☁️**
+
+Made with ❤️ for the DevOps Community
+
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/aws-devops-zero2pro?style=social)](https://github.com/yourusername/aws-devops-zero2pro/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/yourusername/aws-devops-zero2pro?style=social)](https://github.com/yourusername/aws-devops-zero2pro/network/members)
+
+</div>
